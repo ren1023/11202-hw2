@@ -33,6 +33,9 @@ if (!isset($_SESSION['login'])) {  //如果你沒有登入，就會回到首頁
 
   <!-- Template Main CSS File -->
   <link href="assets/css/back.css" rel="stylesheet">
+
+   <!-- import jq -->
+   <script src="./assets/js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -609,6 +612,8 @@ if (!isset($_SESSION['login'])) {  //如果你沒有登入，就會回到首頁
 
   <!-- Template Main JS File -->
   <script src="assets/js/main_back.js"></script>
+
+ 
 
 </body>
 
