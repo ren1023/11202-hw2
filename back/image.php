@@ -1,9 +1,45 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli">校園映像資料管理</p>
-    <form method="post" action="./api/edit.php">  <!-- ?表示是當前的檔案 -->
-        <table width="100%" style="text-align: center;">
+<style>
+        .modal {
+        /* text-align: center; */
+        display: none;
+        position: fixed;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: right;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 20% auto;
+        padding: 10px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<div >
+    <p class="fs-3 text-center pb-3">校園映像資料管理</p>
+    <form class="form-control" method="post" action="./api/edit.php">  <!-- ?表示是當前的檔案 -->
+        <table class="table text-center align-middle" width="100%">
             <tbody>
-                <tr class="yel">
+                <tr >
                     <td width="70%">校園映像資料圖片</td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
@@ -30,13 +66,13 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                        
                         <td >
-                            <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                            <input class="form-check-input" type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                         </td>
                         <td >
-                            <input type="checkbox" name="del[]" value="<?=$row['id']; ?>">
+                            <input class="form-check-input" type="checkbox" name="del[]" value="<?=$row['id']; ?>">
                         </td>
                         <td>
-                            <input type="button" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?=$row['id']; ?>')" value="更換動畫">
+                            <input class="btn btn-secondary edit-btn" type="button" data-table="<?= $do; ?>" data-id="<?= $row['id']; ?>" value="更換動畫">
                         </td>
                         </td>
                     </tr>
@@ -46,7 +82,7 @@
             </tbody>
         </table>
 
-        <div class="cent">
+        <div class='text-center'>
             <?php
             if($now>1){
                 $prev=$now-1;//上一頁等於現在的頁數-1
@@ -64,14 +100,19 @@
         </div>
         <table style="margin-top:40px; width:70%;">
             <tbody>
-                <tr>
+                <tr class="text-center">
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增校園映像圖片"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+                    <td class="text-center"><input class="btn btn-primary btn-lg add-btn" type="button" data-table="<?= $do; ?>" value="新增校園映像圖片">
+                </td>
+                    <td class="text-center">
+                        <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
+                        <input class="btn btn-dark btn-lg" type="reset" value="重置">
+                </td>
                 </tr>
             </tbody>
         </table>
 
     </form>
 </div>
+<?php include_once "./api/modal.php" ?>

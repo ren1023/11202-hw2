@@ -1,9 +1,45 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli">管理者帳號管理</p>
-    <form method="post" action="./api/edit.php">  <!-- ?表示是當前的檔案 -->
-        <table width="100%" style="text-align: center;">
+<style>
+        .modal {
+        /* text-align: center; */
+        display: none;
+        position: fixed;
+        z-index: 99;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: right;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 20% auto;
+        padding: 10px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<div >
+    <p class="fs-3 text-center pb-3">管理者帳號管理</p>
+    <form class="form-control" method="post" action="./api/edit.php">  <!-- ?表示是當前的檔案 -->
+        <table class="table text-center align-middle" width="100%">
             <tbody>
-                <tr class="yel">
+                <tr>
                     <td width="45%">帳號</td>
                     <td width="45%">密碼</td>
                     <td width="10%">刪除</td>
@@ -13,18 +49,17 @@
                 $rows = $DB->all();
                 foreach ($rows as $row) {
                 ?>
-                    <tr>
+                    <tr class="text-center">
                         <td >
-                            <input type="text" name="acc[]" value="<?= $row['acc'];?>">
+                            <input class="form-control" type="text" name="acc[]" value="<?= $row['acc'];?>">
                             <input type="hidden" name="id[]"  value="<?=$row['id'];?>">
                         </td>
                         <td >
-                            <input type="password" name="pw[]" value="<?=$row['pw'];?>">
+                            <input class="form-control" type="password" name="pw[]" value="<?=$row['pw'];?>">
                         </td>
                         <td >
-                            <input type="checkbox" name="del[]" value="<?=$row['id']; ?>">
+                            <input class="form-check-input" type="checkbox" name="del[]" value="<?=$row['id']; ?>">
                         </td>
-
                     </tr>
                 <?php
                 }
@@ -37,10 +72,17 @@
                 <tr>
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增管理者帳號"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+                    <td width="200px">
+                        <input class="btn btn-primary btn-lg add-btn" type="button" data-table="<?= $do; ?>" value="新增管理者帳號">
+                    </td>
+                    <td class="cent">
+                        <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
+                        <input class="btn btn-dark btn-lg" type="reset" value="重置">
+                    </td>
                 </tr>
             </tbody>
         </table>
     </form>
 </div>
+
+<?php include_once "./api/modal.php" ?>

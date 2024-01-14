@@ -1,12 +1,12 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli">頁尾版權資料管理</p>
-    <form method="post" action="./api/edit_info.php">
-        <table style="width:50%;margin:auto">
+<div >
+    <p class="fs-3 text-center pb-3">頁尾版權資料管理</p>
+    <form class="form-control" method="post" action="./api/edit_info.php">
+        <table class="table text-center align-middle" style="width:50%;margin:auto">
             <tbody>
-                <tr class="yel">
+                <tr class="text-center">
                     <td width="50%">頁尾版權資料：</td>
                     <td width="50%">
-                        <input type="text" name="bottom" value="<?=$Bottom->find(1)['bottom'];?>">  <!-- 頁尾版權資料 -->
+                        <input class="form-control" type="text" name="bottom" value="<?=$Bottom->find(1)['bottom'];?>">  <!-- 頁尾版權資料 -->
                         <input type="hidden" name="table" value="<?=$do;?>">
                 </td>
                 </tr>
@@ -16,7 +16,9 @@
             <tbody>
                 <tr>
                     <td width="200px"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+                    <td class="text-center">
+                        <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
+                     <input class="btn btn-dark btn-lg" type="reset" value="重置"></td>
                 </tr>
             </tbody>
         </table>

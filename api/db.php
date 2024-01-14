@@ -141,7 +141,7 @@ $Admin = new DB('house_admin');
 $Menu = new DB('house_menu');
 
 $rows=$Total->find(1)['total'];
-dd($rows);
+// dd($rows);
 
 //可行的方法一
 if(isset($_GET['do'])){ //若 $_GET['do]有存在
