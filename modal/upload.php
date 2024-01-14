@@ -47,8 +47,8 @@ switch ($_GET['table']) {
     </table>
 
     <div>
-        <input class="form-control" type="hidden" name="table" value="<?=$_GET['table'];?>">
-        <input class="form-control" type="hidden" name="id" value="<?=$_GET['id'];?>">
+        <input type="hidden" name="table" value="<?=$_GET['table'];?>">
+        <input type="hidden" name="id" value="<?=$_GET['id'];?>">
         <input class="btn btn-dark btn-lg" type="submit" value="更新">
         <input class="btn btn-dark btn-lg" type="reset" value="重置">
     </div>

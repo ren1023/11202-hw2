@@ -2,16 +2,16 @@
     <!-- <?=$_GET['table'];?> 可以用此方法確認是否有收到來源網頁傳來的值-->
 </h3>
 <hr>
-<form action="./api/add.php" method="post" enctype="multipart/form-data">
-    <table>
-        <tr>
+<form class="form-control" action="./api/add.php" method="post" enctype="multipart/form-data">
+    <table class="table text-center align-middle">
+        <tr class="fs-5">
             <td>標題區圖片</td>
-            <td><input type="file" name="img" id=""></td>
+            <td><input class="form-control" type="file" name="img" id=""></td>
         </tr>
-        <tr>
+        <tr class="fs-5">
             <td>標題區替代文字</td>
             <td>
-                <input type="text" name="text" id="">
+                <input class="form-control" type="text" name="text" id="">
             </td>
         </tr>
        
@@ -19,7 +19,7 @@
 
     <div>
         <input type="hidden" name="table" value="<?=$_GET['table'];?>">
-        <input type="submit" value="新增">
-        <input type="reset" value="重置">
+        <input class="btn btn-dark btn-lg" type="submit" value="新增">
+        <input class="btn btn-dark btn-lg" type="reset" value="重置">
     </div>
 </form>
