@@ -13,9 +13,9 @@ switch ($_GET['table']) {
 ?>
 
 <hr>
-<form action="./api/update.php" method="post" enctype="multipart/form-data">
-    <table>
-        <tr>
+<form class="form-control" action="./api/update.php" method="post" enctype="multipart/form-data">
+    <table class="table text-center align-middle">
+        <tr class="fs-5">
             <?php 
             switch ($_GET['table']) {
                 case "title":
@@ -29,15 +29,15 @@ switch ($_GET['table']) {
                     break;
             }
             ?>
-            <td><input type="file" name="img" id=""></td>
+            <td><input class="form-control" type="file" name="img" id=""></td>
         </tr>
         <tr>
             <?php
             switch ($_GET['table']) {
                 case "title":
-                    echo "<td>標題區替代文字</td>";
+                    echo "<td class='fs-5'>標題區替代文字</td>";
                     echo "<td>";
-                    echo '<input type="text" name="text" id="">';
+                    echo '<input class="form-control" type="text" name="text" id="">';
                     echo "</td>";
                     break;
             }
@@ -47,9 +47,9 @@ switch ($_GET['table']) {
     </table>
 
     <div>
-        <input type="hidden" name="table" value="<?=$_GET['table'];?>">
-        <input type="hidden" name="id" value="<?=$_GET['id'];?>">
-        <input type="submit" value="更新">
-        <input type="reset" value="重置">
+        <input class="form-control" type="hidden" name="table" value="<?=$_GET['table'];?>">
+        <input class="form-control" type="hidden" name="id" value="<?=$_GET['id'];?>">
+        <input class="btn btn-dark btn-lg" type="submit" value="更新">
+        <input class="btn btn-dark btn-lg" type="reset" value="重置">
     </div>
 </form>

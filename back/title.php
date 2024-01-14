@@ -84,7 +84,7 @@
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
                     <td class="text-center" >
-                        <input class="btn btn-primary btn-lg" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"></td>
+                        <input class="btn btn-primary btn-lg add-btn" type="button" data-table="<?= $do; ?>" data-id="<?= $row['id']; ?>" value="新增網站標題圖片"></td>
                     <td class="text-center">
                         <input class="btn btn-dark btn-lg " type="submit" value="修改確定">
                         <input class="btn btn-dark btn-lg" type="reset" value="重置">
@@ -123,6 +123,20 @@
         });
     });
 
+    $(".add-btn").on("click", function() {
+        let id = $(this).data('id');
+        let table = $(this).data('table');
+
+        // 加載 upload.php 的內容到模態視窗中
+        $("#modal-body").load(`./modal/${table}.php?table=${table}`, function() {
+
+            // 顯示模態視窗
+            $("#myModal").show();
+        });
+    });
+
+
+
     // 關閉模態視窗
     $(".close").click(function() {
         $("#myModal").hide();
@@ -134,6 +148,16 @@
             $("#myModal").hide();
         }
     });
+
+
+    
+
+
+
+
+
+
+
 });
 
 </script>
