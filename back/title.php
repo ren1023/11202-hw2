@@ -1,8 +1,11 @@
+<style>
+
+</style>
 <div >
     <p class="fs-3 text-center pb-3">網站標題管理</p>
     <form class="form-control" method="post" action="./api/edit.php">  <!-- ?表示是當前的檔案 -->
-        <table class="table text-center" width="100%" >
-            <tbody>
+        <table class="table text-center align-middle" width="100%" >
+            <tbody >
                 <tr >
                     <td width="45%">網站標題</td>
                     <td width="23%">替代文字</td>
@@ -16,9 +19,9 @@
                 $rows = $DB->all();
                 foreach ($rows as $row) {
                 ?>
-                    <tr>
+                    <tr class="text-center">
                         <td width="45%">
-                            <img src="./img/<?= $row['img']; ?>" style="width:300px;height:30px;">
+                            <img src="./img/<?= $row['img']; ?>" style="width:300px;height:200px;">
                         </td>
                         <td width="23%">
                             <input class="form-control" type="text" name="text[]" style="width: 90%;" value="<?= $row['text'];?>">
