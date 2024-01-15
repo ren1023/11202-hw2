@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>How House</title>
+  <title>卓越科大校園資訊系統</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -175,8 +175,20 @@
       <div>
         <span class="p-5">瀏覽總人數 <?= $Total->find(1)['total']; ?></span>
       </div>
+      <?php
+				if(isset($_SESSION['login'])){
+				?>
+				<a class="get-started-btn" href="./back.php">返回管理</a>
+				<?php
+				}else{
 
-       <a href="./front/login.php" class="get-started-btn ">管理登入</a>
+				
+				?>
+				<a class="get-started-btn" href="./front/login.php">管理登入</a>
+				<?php
+				}
+				?>
+       <!-- <a href="./front/login.php" class="get-started-btn ">管理登入</a> -->
     </div>
   </nav><!-- End 導覽列 Header/Navbar -->
 
@@ -187,9 +199,12 @@
     <div class="swiper-wrapper">
       <?php
       $imgs = $Image->all(['sh' => 1]);
+      
       foreach ($imgs as $img) {
         // 組合圖片的完整路徑
+       
         $imagePath = "./img/" . $img['img'];
+        
 
         // 生成帶有背景圖片的 div
         echo '<div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(' . $imagePath . ');">';
@@ -200,7 +215,7 @@
         echo '        <div class="row">';
         echo '          <div class="col-lg-8">';
         echo '            <div class="intro-body">';
-        echo '            <h1 style="color:white;">Welcome<br>Leading Your Life</h1>';
+        echo '            <h1 style="color:white;">Welcome<br>Leading Your Life </h1>';
         echo '            </div>';
         echo '          </div>';
         echo '        </div>';
@@ -208,6 +223,7 @@
         echo '    </div>';
         echo '  </div>';
         echo '</div>';
+        
       }
       ?>
     </div>
@@ -1019,7 +1035,7 @@
                 <a href="#">首頁</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">關於我們</a>
+                <a href="#">最新消息</a>
               </li>
               <li class="list-inline-item">
                 <a href="#">豪屋</a>
@@ -1079,6 +1095,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 
