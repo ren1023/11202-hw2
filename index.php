@@ -131,7 +131,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.php">豪屋<span class="color-b">網</span></a>
+      <a class="navbar-brand text-brand" href="index.php">卓越科技大學<span class="color-b">網</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
