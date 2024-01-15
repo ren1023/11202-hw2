@@ -239,37 +239,43 @@
           <div class="col-md-12">
             <div class="title-wrap d-flex justify-content-between">
               <div class="title-box">
-                <h2 class="title-a">我們的服務</h2>
+                <h2 class="title-a">最新消息</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md">
             <div class="card-box-c foo">
               <div class="card-header-c d-flex">
-                <div class="card-box-ico">
+                <!-- =============最新消息區====start================ -->
+                <?php
+                //  $do = $_GET['do'];
+                include_once "./front/news.php";
+                ?>
+                <!-- =============最新消息區====end================ -->
+                <!-- <div class="card-box-ico">
                   <span class="bi bi-cart"></span>
-                </div>
-                <div class="card-title-c align-self-center">
+                </div> -->
+                <!-- <div class="card-title-c align-self-center">
                   <h2 class="title-c">Lifestyle</h2>
-                </div>
+                </div> -->
               </div>
-              <div class="card-body-c">
+              <!-- <div class="card-body-c">
                 <p class="content-c">
                   Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
                   convallis a pellentesque
                   nec, egestas non nisi.
                 </p>
-              </div>
-              <div class="card-footer-c">
+              </div> -->
+              <!-- <div class="card-footer-c">
                 <a href="#" class="link-c link-icon">Read more
                   <span class="bi bi-chevron-right"></span>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="card-box-c foo">
               <div class="card-header-c d-flex">
                 <div class="card-box-ico">
@@ -292,8 +298,8 @@
                 </a>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
+          </div> -->
+          <!-- <div class="col-md-4">
             <div class="card-box-c foo">
               <div class="card-header-c d-flex">
                 <div class="card-box-ico">
@@ -316,7 +322,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section><!-- 我們的服務 End Services Section -->
@@ -942,7 +948,7 @@
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">豪屋網</h3>
+              <h3 class="w-title-a text-brand">卓越科技大學</h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
@@ -1037,9 +1043,9 @@
               <li class="list-inline-item">
                 <a href="#">最新消息</a>
               </li>
-              <li class="list-inline-item">
+              <!-- <li class="list-inline-item">
                 <a href="#">豪屋</a>
-              </li>
+              </li> -->
               <li class="list-inline-item">
                 <a href="#">部落格</a>
               </li>
@@ -1075,7 +1081,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">豪屋網</span> All Rights Reserved.
+              <span class="color-a">卓越科技大學</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">

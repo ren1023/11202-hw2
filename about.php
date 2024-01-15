@@ -1,3 +1,5 @@
+<?php include_once "./api/db.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +26,10 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+     <!-- import jq -->
+     <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
 
   <!-- =======================================================
   * Template Name: EstateAgency
@@ -189,17 +195,17 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">We Do Great Design For Creative Folks</h1>
+              <h1 class="title-single">最新消息區</h1>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
             <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#">Home</a>
+                  <a href="#">首頁</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  About
+                  最新消息
                 </li>
               </ol>
             </nav>
@@ -211,30 +217,35 @@
     <!-- ======= About Section ======= -->
     <section class="section-about">
       <div class="container">
-        <div class="row">
+        <div class="row text-center">
           <div class="col-sm-12 position-relative">
-            <div class="about-img-box">
-              <img src="assets/img/slide-about-1.jpg" alt="" class="img-fluid">
-            </div>
-            <div class="sinse-box">
+            <!-- <div class="about-img-box"> -->
+              <!-- <img src="assets/img/slide-about-1.jpg" alt="" class="img-fluid"> -->
+              <?php
+                //  $do = $_GET['do'];
+                include_once "./front/news.php";
+                ?>
+
+            <!-- </div> -->
+            <!-- <div class="sinse-box">
               <h3 class="sinse-title">EstateAgency
                 <span></span>
                 <br> Sinse 2017
               </h3>
               <p>Art & Creative</p>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-12 section-t8 position-relative">
             <div class="row">
               <div class="col-md-6 col-lg-5">
-                <img src="assets/img/about-2.jpg" alt="" class="img-fluid">
+                <!-- <img src="assets/img/about-2.jpg" alt="" class="img-fluid"> -->
               </div>
-              <div class="col-lg-2  d-none d-lg-block position-relative">
+              <!-- <div class="col-lg-2  d-none d-lg-block position-relative">
                 <div class="title-vertical d-flex justify-content-start">
                   <span>EstateAgency Exclusive Property</span>
                 </div>
-              </div>
-              <div class="col-md-6 col-lg-5 section-md-t3">
+              </div> -->
+              <!-- <div class="col-md-6 col-lg-5 section-md-t3">
                 <div class="title-box-d">
                   <h3 class="title-d">Sed
                     <span class="color-d">porttitor</span> lectus
@@ -254,7 +265,7 @@
                   elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed,
                   convallis at tellus.
                 </p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
