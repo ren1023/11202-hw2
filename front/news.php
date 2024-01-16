@@ -36,19 +36,20 @@
 		if ($now > 1) {
 			
 			$prev = $now - 1;
-			echo " <a href='?do=$do&p=$prev'><</a> ";
+			echo " <a href='?news&p=$prev'><</a> ";
 		}
 
 
 		for ($i = 1; $i <= $pages; $i++) {
 			$fontsize = ($now == $i) ? '24px' : '16px';
+			// echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i <a/>";
 			echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i <a/>";
 		}
 
 
 		if ($now < $pages) {
 			$next = $now + 1;
-			echo " <a href='?do=$do&p=$next'> > </a> ";
+			echo " <a href='?news&p=$next'> > </a> ";
 		}
 
 		?>

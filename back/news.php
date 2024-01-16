@@ -1,10 +1,10 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli">最新消息資料管理</p>
-    <form method="post" action="./api/edit.php"> <!-- ?表示是當前的頁面 -->
-        <table width="100%" style="text-align: center;">
+<div >
+    <p class="fs-3 text-center pb-3">最新消息資料管理</p>
+    <form class="form-control" method="post" action="./api/edit.php"> <!-- ?表示是當前的頁面 -->
+        <table width="100%" class="table text-center align-middle">
             <tbody>
-                <tr class="yel">
-                    <td width="80%" style="text-align: left;">最新消息資料</td>
+                <tr >
+                    <td width="80%">最新消息資料</td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
                 </tr>
@@ -20,14 +20,14 @@
                 ?>
                     <tr>
                         <td>
-                            <textarea type="text" name="text[]" style="width:90%;height:60px"><?= $row['text'];?></textarea>
-                            <input type="hidden" name="id[]" value="<?=$row['id'];?>">
+                            <textarea class="form-control" type="text" name="text[]" style="width:90%;height:60px"><?= $row['text'];?></textarea>
+                            <input class="form-control" type="hidden" name="id[]" value="<?=$row['id'];?>">
                         </td>
                         <td>
-                            <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
+                            <input class="form-check-input" type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>>
                         </td>
                         <td>
-                            <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
+                            <input class="form-check-input" type="checkbox" name="del[]" value="<?=$row['id'];?>">
                         </td>
                     </tr>
                 <?php
@@ -35,7 +35,7 @@
                 ?>
             </tbody>
         </table>
-        <div class="cent">
+        <div class="text-center">
             <?php
         
             if($now>1){  //當 當前頁大於1時，則往下執行
@@ -58,13 +58,17 @@
             ?>
 
         </div>
-        <table style="margin-top:40px; width:70%;">
+        <table style="margin-top:40px; width:70%; " class="text-center">
             <tbody>
                 <tr>
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="最新消息資料"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+                    <td width="200px">
+                        <input class="btn btn-primary btn-lg" type="button" type="button" data-table="<?= $do; ?>" value="最新消息資料"></td>
+                    <td >
+                        <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
+                    <input class="btn btn-dark btn-lg" type="reset" value="重置">
+                </td>
                 </tr>
             </tbody>
         </table>

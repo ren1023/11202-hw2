@@ -91,43 +91,50 @@ if (!isset($_SESSION['login'])) {  //如果你沒有登入，就會回到首頁
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=ad">
-        <i class="fa-solid fa-file-word"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>動態文字廣告管理</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=mvim">
-        <i class="fa-regular fa-image"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>動畫圖片管理</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=image">
-        <i class="fa-solid fa-tree"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>校園映象資料管理</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=total">
-        <i class="fa-solid fa-person"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>進站總人數管理</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=bottom">
-          <i class="bi bi-file-earmark"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>頁尾版權資料管理</span>
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link collapsed" href="?do=news">
+        <i class="bi bi-menu-button-wide"></i>
+          <span>最新消息資料管理</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="?do=admin">
-        <i class="fa-solid fa-user-tie"></i>
+        <i class="bi bi-menu-button-wide"></i>
           <span>管理者帳號管理</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="?do=menu">
-        <i class="fa-brands fa-elementor"></i>
+        <i class="bi bi-menu-button-wide"></i>
+
           <span>選單管理</span>
         </a>
       </li>
