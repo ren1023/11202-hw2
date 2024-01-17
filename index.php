@@ -145,7 +145,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="about.php">最新消息</a>
+            <a class="nav-link " href="./about.php">最新消息</a>
           </li>
           <!-- 
           <li class="nav-item">
