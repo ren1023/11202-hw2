@@ -97,7 +97,7 @@
 				$(".sswww").hover(
 					function() {
 						$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
-							"top": $(this).offset().top - 50
+							"top": $(this).offset().top -500
 						})
 						$("#alt").show()
 					}
