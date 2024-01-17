@@ -59,7 +59,7 @@
     <!-- ======= About Section ======= -->
     <section class="section-about">
       <div class="container">
-        <div class="row text-center">
+        <div class="row">
           <div class="col-sm-12 ">
             <!-- <div class="about-img-box"> -->
               <!-- <img src="assets/img/slide-about-1.jpg" alt="" class="img-fluid"> -->

@@ -14,7 +14,7 @@
 
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -28,20 +28,20 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
-     <!-- import jq -->
-     <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <!-- import jq -->
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
 
 </head>
 <body>
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left;position:relative;  left:20px;">
+<div class="di border border-5 " style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left;position:relative;  left:20px;">
 	<?php 
 	// include "marquee.php";
 	?>
 
 	<div style="height:32px; display:block;"></div>
 	<!--正中央-->
-	<h3>更多最新消息顯示區</h3>
+	<h3 class="text-center">更多最新消息顯示區</h3>
 	<hr>
 	<?php 
 		$total =$News->count(['sh' => 1]);
@@ -56,7 +56,7 @@
 
 		foreach ($news as $n) {
 			echo "<li class='sswww' >";
-			echo mb_substr($n['text'], 0, 20);
+			echo mb_substr($n['text'], 0, 40);
 			echo "<div class='all' style='display:none'>";
 			echo $n['text'];
 			echo "</div>";
