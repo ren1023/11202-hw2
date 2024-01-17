@@ -1,6 +1,40 @@
 
+<!-- <?php include_once "../api/db.php" ?> -->
 
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>EstateAgency Bootstrap Template - About</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+     <!-- import jq -->
+     <script src="../assets/js/jquery-3.7.1.min.js"></script>
+
+
+</head>
+<body>
+<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left;position:relative;  left:20px;">
 	<?php 
 	// include "marquee.php";
 	?>
@@ -9,7 +43,8 @@
 	<!--正中央-->
 	<h3>更多最新消息顯示區</h3>
 	<hr>
-	<?php $total = $DB->count(['sh' => 1]);
+	<?php 
+		$total =$News->count(['sh' => 1]);
 		$div = 5;
 		$pages = ceil($total / $div);
 		$now = $_GET['p'] ?? 1;
@@ -30,7 +65,7 @@
 		?>
 	</ol>
 
-	<div class="cent">
+	<div class="text-center">
 		<?php
 			
 		if ($now > 1) {
@@ -43,7 +78,7 @@
 		for ($i = 1; $i <= $pages; $i++) {
 			$fontsize = ($now == $i) ? '24px' : '16px';
 			// echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i <a/>";
-			echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i <a/>";
+			echo "<a href='??news&p=$i' style='font-size:$fontsize'> $i <a/>";
 		}
 
 
@@ -55,25 +90,40 @@
 		?>
 
 	</div>
-</div>
-</div>
-<div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
-			<script>
-				$(".sswww").hover(
-					function() {
-						$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
-							"top": $(this).offset().top - 200
-						})
-						$("#alt").show()
-					}
-				)
-				$(".sswww").mouseout(
-					function() {
-						$("#alt").hide()
-					}
-				)
-			</script>
+<div id="alt" style="position: absolute; width: 450px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
 
+</div>
+</div>
+
+<script>
+	$(".sswww").hover(
+		function() {
+			$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
+				"top": $(this).offset().top - 50
+			})
+			$("#alt").show()
+		}
+	)
+	$(".sswww").mouseout(
+		function() {
+			$("#alt").hide()
+		}
+	)
+</script>
+
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
+</body>
 
 
 
