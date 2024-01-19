@@ -64,7 +64,7 @@
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
                     <td width="200px">
-                        <input class="btn btn-primary btn-lg" type="button" type="button" data-table="<?= $do; ?>" value="最新消息資料"></td>
+                        <input class="btn btn-primary btn-lg add-btn" type="button" data-table="<?= $do; ?>" value="最新消息資料">
                     <td >
                         <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
                     <input class="btn btn-dark btn-lg" type="reset" value="重置">
@@ -74,3 +74,5 @@
         </table>
     </form>
 </div>
+<?php include_once "./api/modal.php" ?>
+

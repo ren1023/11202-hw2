@@ -7,6 +7,7 @@
 </div>
 <script>
     $(document).ready(function() {
+        
         // 統一處理按鈕點擊事件
         function handleButtonClick(isEdit) {
             let id = $(this).data('id');
