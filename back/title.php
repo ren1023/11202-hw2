@@ -54,7 +54,7 @@
                 ?>
                     <tr class="text-center">
                         <td width="45%">
-                            <img src="./img/<?= $row['img']; ?>" style="width:300px;height:200px;">
+                            <img src="./img/<?= $row['img']; ?>" style="width:300px;height:30px;">
                         </td>
                         <td width="23%">
                             <input class="form-control" type="text" name="text[]" style="width: 90%;" value="<?= $row['text']; ?>">

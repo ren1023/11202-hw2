@@ -5,12 +5,14 @@ class DB
 {
     protected $dsn = "mysql:host=localhost;charset=utf8;dbname=house";
     //protected $dsn = "mysql:host=localhost;charset=utf8;dbname=bquiz";
+    // protected $dsn = "mysql:host=localhost;charset=utf8;dbname=s1120420";
+
     protected $pdo;
     protected $table;
     public function __construct($table)
     {
         $this->table = $table;
-        //$this->pdo=new PDO($this->dsn,'s1120401','s1120401');
+        // $this->pdo=new PDO($this->dsn,'s1120420','s1120420');
         $this->pdo = new PDO($this->dsn, 'root', '');
     }
     function all($where = '', $other = '')

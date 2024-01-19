@@ -32,9 +32,13 @@
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
 
+<<<<<<< HEAD
 </head>
 <body>
 <div class="di border border-5 " style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left;position:relative;  left:20px;">
+=======
+<div class="di mt-5" style="background-color: lightblue; position:relative; ">
+>>>>>>> 831085403ac43a2c4520f6b918739b6ca8f4f1c4
 	<?php 
 	// include "marquee.php";
 	?>
@@ -51,12 +55,17 @@
 		$start = ($now - 1) * $div;
 		$news = $News->all("limit $start,$div");
 	?>
-	<ol class="ssaa" start='<?= $start + 1; ?>'>
+	<ol class="ssaa list-group" start='<?= $start + 1; ?>'>
 		<?php
 
 		foreach ($news as $n) {
+<<<<<<< HEAD
 			echo "<li class='sswww' >";
 			echo mb_substr($n['text'], 0, 40);
+=======
+			echo "<li class='sswww list-group-item list-group-item-success mt-3' >";
+			echo mb_substr($n['text'], 0, 20);
+>>>>>>> 831085403ac43a2c4520f6b918739b6ca8f4f1c4
 			echo "<div class='all' style='display:none'>";
 			echo $n['text'];
 			echo "</div>";
@@ -78,7 +87,7 @@
 		for ($i = 1; $i <= $pages; $i++) {
 			$fontsize = ($now == $i) ? '24px' : '16px';
 			// echo "<a href='?do=$do&p=$i' style='font-size:$fontsize'> $i <a/>";
-			echo "<a href='??news&p=$i' style='font-size:$fontsize'> $i <a/>";
+			echo "<a href='?news&p=$i' style='font-size:$fontsize'> $i <a/>";
 		}
 
 
@@ -94,36 +103,23 @@
 
 </div>
 </div>
+<div id="alt" class="table-warning rounded-4" style="position: absolute; width: 400px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
+			<script>
+				$(".sswww").hover(
+					function() {
+						$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
+							"top": $(this).offset().top -500
+						})
+						$("#alt").show()
+					}
+				)
+				$(".sswww").mouseout(
+					function() {
+						$("#alt").hide()
+					}
+				)
+			</script>
 
-<script>
-	$(".sswww").hover(
-		function() {
-			$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
-				"top": $(this).offset().top - 50
-			})
-			$("#alt").show()
-		}
-	)
-	$(".sswww").mouseout(
-		function() {
-			$("#alt").hide()
-		}
-	)
-</script>
-
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
-</body>
-
-</html>
-</body>
 
 
 

@@ -26,22 +26,22 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  
-     <!-- import jq -->
-     <script src="./assets/js/jquery-3.7.1.min.js"></script>
+
+  <!-- import jq -->
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
 
-  <!-- ======= 房屋資料搜尋 Search Section ======= -->
+  <!-- ======= 選課資料 Search Section ======= -->
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">找宅</h3>
+      <h3 class="title-d">選課資料</h3>
     </div>
     <span class="close-box-collapse right-boxed bi bi-x"></span>
-    <div class="box-collapse-wrap form">
+    <!-- <div class="box-collapse-wrap form">
       <form class="form-a">
         <div class="row">
           <div class="col-md-12 mb-2">
@@ -124,8 +124,8 @@
           </div>
         </div>
       </form>
-    </div>
-  </div><!-- End 房屋資料搜尋 Search Section -->>
+    </div> -->
+  </div><!-- End 選課資料 Search Section -->>
 
   <!-- =======導覽列 Header/Navbar  ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -147,7 +147,7 @@
           <li class="nav-item">
             <a class="nav-link " href="./about.php">最新消息</a>
           </li>
-<!-- 
+          <!-- 
           <li class="nav-item">
             <a class="nav-link " href="property-grid.php">test</a>
           </li>
@@ -178,35 +178,35 @@
         <span class="p-5">瀏覽總人數 <?= $Total->find(1)['total']; ?></span>
       </div>
       <?php
-				if(isset($_SESSION['login'])){
-				?>
-				<a class="get-started-btn" href="./back.php">返回管理</a>
-				<?php
-				}else{
+      if (isset($_SESSION['login'])) {
+      ?>
+        <a class="get-started-btn" href="./back.php">返回管理</a>
+      <?php
+      } else {
 
-				
-				?>
-				<a class="get-started-btn" href="./front/login.php">管理登入</a>
-				<?php
-				}
-				?>
-       <!-- <a href="./front/login.php" class="get-started-btn ">管理登入</a> -->
+
+      ?>
+        <a class="get-started-btn" href="./front/login.php">管理登入</a>
+      <?php
+      }
+      ?>
+      <!-- <a href="./front/login.php" class="get-started-btn ">管理登入</a> -->
     </div>
   </nav><!-- End 導覽列 Header/Navbar -->
 
-      
+
   <!-- ======= 輪播圖區 Intro Section  ======= -->
   <!-- 替代校園映像檔 -->
   <div class="intro intro-carousel swiper position-relative">
     <div class="swiper-wrapper">
       <?php
       $imgs = $Image->all(['sh' => 1]);
-      
+
       foreach ($imgs as $img) {
         // 組合圖片的完整路徑
-       
+
         $imagePath = "./img/" . $img['img'];
-        
+
 
         // 生成帶有背景圖片的 div
         echo '<div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(' . $imagePath . ');">';
@@ -217,7 +217,8 @@
         echo '        <div class="row">';
         echo '          <div class="col-lg-8">';
         echo '            <div class="intro-body">';
-        echo '            <h1 style="color:white;">Welcome<br>Leading Your Life </h1>';
+        echo '            <h1 style="color:white;">「卓越大學，引領未來教育之路。<br>
+                                                    啟迪思維，培養明日領袖。」<br></h1>';
         echo '            </div>';
         echo '          </div>';
         echo '        </div>';
@@ -225,18 +226,62 @@
         echo '    </div>';
         echo '  </div>';
         echo '</div>';
-        
       }
       ?>
     </div>
     <div class="swiper-pagination"></div>
   </div>
 
-  <main id="main">
+  <!-- <main id="main" > -->
+
+    <!-- ======= Services Section ======= -->
+    <section class="mt-5">
+      <div class="container " >
+        <div class="row">
+          <div class="col-md-12 col-md-4 ">
+            <div >
+              
+                <h2 class="title-a">最新消息區</h2>
+              
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 30vh;">
+          <div class="col-md-12 col-md-6">
+              <div class="table-success" style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px 5px 10px;  position:relative;">
+                <span class="mt-5">
+                  <?php
+                  if ($News->count(['sh' => 1]) > 5) {
+                    echo "<a href='about.php' style='float: right;'>More...</a>";
+                  }
+                  ?>
+                </span>
+                <ul class="ssaa list-group">
+                  <?php
+                  $news = $News->all(['sh' => 1], ' limit 5');
+                  foreach ($news as $n) {
+                    echo "<li class='list-group-item list-group-item-success mt-3' >";
+                    echo mb_substr($n['text'], 0, 20);
+                    echo "<div class='all' style='display:none'>";
+                    echo $n['text'];
+                    echo "</div>";
+                    echo "...</li>";
+                  }
+                  ?>
+
+                </ul>
+                <div id="altt" class="table-warning rounded-4" style="position: absolute; width: 400px; min-height: 100px; background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px;  background-position: initial initial; background-repeat: initial initial;">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
 
 
 
-  </main><!-- End #main -->
+  <!-- </main> -->
+  <!-- End #main -->
 
   <!-- ======= 頁尾區 Footer ======= -->
   <section class="section-footer">
@@ -323,7 +368,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        
+
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
@@ -348,7 +393,19 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-
+  <script>
+    $(".ssaa li").hover( //.ssaa下一層li發生mouse移上去時去執行以下
+      function() {
+        $("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>") //this指的是hover這個事件，當下的這個元件<li>的下一層的容器，.html(), 表示呈現此元素的所有內容
+        $("#altt").show() //這是舊版才要寫的
+      }
+    )
+    $(".ssaa li").mouseout( //當我mouse移出的時侯隱藏
+      function() {
+        $("#altt").hide()
+      }
+    )
+  </script>
 
 </body>
 
