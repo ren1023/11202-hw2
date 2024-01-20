@@ -21,7 +21,7 @@ if(isset($_POST['add_text'])){
             $data['menu_id']=$_POST['menu_id'];
             $Menu->save($data);
             echo print_r($Menu->save($data));
-            exit();
+            // exit();
 
         }
 

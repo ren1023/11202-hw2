@@ -72,7 +72,7 @@
                             <input class="form-check-input" type="checkbox" name="del[]" value="<?=$row['id']; ?>">
                         </td>
                         <td>
-                            <input class="btn btn-secondary edit-btn" type="button" data-table="<?= $do; ?>" data-id="<?= $row['id']; ?>" value="更換動畫">
+                            <input class="btn btn-secondary edit-btn" type="button" data-table="<?= $do;?>" data-id="<?= $row['id'];?>" value="更換動畫">
                         </td>
                         </td>
                     </tr>

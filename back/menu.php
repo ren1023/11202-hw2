@@ -69,7 +69,7 @@
                             <input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
                         </td>
                         <td>
-                            <input class="btn btn-secondary edit-btn" type="button" value="編輯次選單" onclick="op('#cover','#cvr','./modal/submenu.php?table=<?= $do; ?>&id=<?=$row['id']; ?>')">
+                            <input class="btn btn-secondary edit-btn" type="button" value="編輯次選單" data-table="<?= $do;?>" data-id="<?= $row['id'];?>">
                         </td>
                     </tr>
                     <input type="hidden" name="id[]" value="<?= $row['id']; ?>">

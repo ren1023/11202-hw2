@@ -66,7 +66,7 @@
                             <input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>"> <!-- 此欄位帶id，之後會使用在刪除資料上 -->
                         </td>
                         <td>
-                            <input class="btn btn-secondary edit-btn" type="button" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')" value="更換動畫"> <!-- 將do這個變數的值和id的值傳至edit.php -->
+                            <input class="btn btn-secondary edit-btn" type="button" data-table="<?= $do; ?>" data-id="<?= $row['id']; ?>" value="更換動畫"> <!-- 將do這個變數的值和id的值傳至edit.php -->
                         </td>
                     </tr>
                 <?php
@@ -81,7 +81,7 @@
                     <input type="hidden" name="table" value="<?= $do; ?>">
                     <!--  經由click事件，開啟 ./modal/"$do的網頁，並將值(table=$do)傳出去後，由_GET接收 -->
                     <td class="text-center">
-                        <input class="btn btn-primary btn-lg add-btn" type="button" type="button" data-table="<?= $do; ?>" value="新增動畫圖片">    
+                        <input class="btn btn-primary btn-lg add-btn" type="button"  data-table="<?= $do; ?>" value="新增動畫圖片">    
                     </td>
                     <td class="text-center">
                         <input class="btn btn-dark btn-lg" type="submit" value="修改確定">
