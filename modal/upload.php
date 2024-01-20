@@ -31,18 +31,18 @@ switch ($_GET['table']) {
             ?>
             <td><input class="form-control" type="file" name="img" id=""></td>
         </tr>
-        <tr>
+        <!-- <tr>
             <?php
-            switch ($_GET['table']) {
-                case "title":
-                    echo "<td class='fs-5'>標題區替代文字</td>";
-                    echo "<td>";
-                    echo "<input class='form-control' type='text' name='text' id=''>";
-                    echo "</td>";
-                    break;
-            }
+            // switch ($_GET['table']) {
+            //     case "title":
+            //         echo "<td class='fs-5'>標題區替代文字</td>";
+            //         echo "<td>";
+            //         echo "<input class='form-control' type='text' name='text' id=''>";
+            //         echo "</td>";
+            //         break;
+            // }
             ?>
-        </tr>
+        </tr> -->
 
     </table>
 

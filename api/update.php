@@ -6,6 +6,8 @@ include_once "db.php";
 $table=$_POST['table'];
 $DB=${ucfirst($table)};
 $row=$DB->find($_POST['id']);
+// dd($row);
+
 
 if (isset($_POST['text'])) {
     $row['text'] = $_POST['text'];
