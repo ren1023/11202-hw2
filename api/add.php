@@ -24,6 +24,7 @@ unset($_POST['table']);// 從post來有多了一個欄位叫'table'！會與資�
 // exit();
 $DB->save($_POST);
 // echo $DB->save($_POST);
+// dd($DB->save($_POST));
 // exit();
 // echo "test";
 // exit();

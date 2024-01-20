@@ -37,7 +37,7 @@ switch ($_GET['table']) {
                 case "title":
                     echo "<td class='fs-5'>標題區替代文字</td>";
                     echo "<td>";
-                    echo '<input class="form-control" type="text" name="text" id="">';
+                    echo "<input class='form-control' type='text' name='text' id=''>";
                     echo "</td>";
                     break;
             }
