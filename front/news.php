@@ -32,13 +32,7 @@
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
 
-<<<<<<< HEAD
-</head>
-<body>
-<div class="di border border-5 " style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left;position:relative;  left:20px;">
-=======
 <div class="di mt-5" style="background-color: lightblue; position:relative; ">
->>>>>>> 831085403ac43a2c4520f6b918739b6ca8f4f1c4
 	<?php 
 	// include "marquee.php";
 	?>
@@ -59,13 +53,8 @@
 		<?php
 
 		foreach ($news as $n) {
-<<<<<<< HEAD
-			echo "<li class='sswww' >";
-			echo mb_substr($n['text'], 0, 40);
-=======
 			echo "<li class='sswww list-group-item list-group-item-success mt-3' >";
 			echo mb_substr($n['text'], 0, 20);
->>>>>>> 831085403ac43a2c4520f6b918739b6ca8f4f1c4
 			echo "<div class='all' style='display:none'>";
 			echo $n['text'];
 			echo "</div>";

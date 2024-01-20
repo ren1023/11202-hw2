@@ -114,15 +114,9 @@
       <section class="intro-single">
       <div class="container">
         <div class="row">
-<<<<<<< HEAD
-          <div class="col-sm-12 ">
-            <!-- <div class="about-img-box"> -->
-              <!-- <img src="assets/img/slide-about-1.jpg" alt="" class="img-fluid"> -->
-=======
           <div class="col-md-12 col-lg-12">
             <div class="title-single-box">
               <h1 class="title-single">更多最新消息顯示區</h1>
->>>>>>> 831085403ac43a2c4520f6b918739b6ca8f4f1c4
               <?php
                 //  $do = $_GET['do'];
                 include_once "./front/news.php";
